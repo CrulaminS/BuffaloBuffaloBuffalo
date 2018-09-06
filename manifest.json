@@ -1,0 +1,29 @@
+{
+
+  "manifest_version": 2,
+  "name": "BuffaloBuffaloBuffalo",
+  "version": "1.0",
+
+  "description": "Replaces words with other words. And saves profiles of wors to replace with other words. Like Buffalo.",
+
+  "icons": {
+    "48": "icons/buffalo-48.png",
+	"96": "icons/buffalo-96.png"
+  },
+
+  "permissions": [
+    "activeTab"
+  ],
+  
+  "applications": {
+		"gecko": {
+			"id": "buffalobuffalobuffalo@example.com"
+		}
+	},
+  
+  "browser_action": {
+    "default_icon": "icons/buffalo-48.png",
+    "default_title": "BuffaloBuffaloBuffalo",
+    "default_popup": "popup/buffaloify.html"
+  }
+}
