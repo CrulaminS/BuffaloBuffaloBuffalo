@@ -1,4 +1,3 @@
-document.body.innerHTML = document.body.innerHTML.replace(*, 'Buffalo');
 function() {
   /**
    * Check and set a global guard variable.
