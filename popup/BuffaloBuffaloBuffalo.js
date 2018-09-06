@@ -13,7 +13,7 @@ function listenForClicks() {
     }
 	
     function reportError(error) {
-      console.error(`Could not buffaloify: ${error}`);
+      console.error(`Could not Buffaloify: ${error}`);
     }
     
     if (e.target.classList.contains("buffalo")) {
@@ -32,7 +32,7 @@ function listenForClicks() {
 function reportExecuteScriptError(error) {
   document.querySelector("#popup-content").classList.add("hidden");
   document.querySelector("#error-content").classList.remove("hidden");
-  console.error(`Failed to execute buffaloify content script: ${error.message}`);
+  console.error(`Failed to execute BuffaloBuffaloBuffalo content script: ${error.message}`);
 }
 
 browser.tabs.executeScript({file: "/content_scripts/buffaloify.js"})
