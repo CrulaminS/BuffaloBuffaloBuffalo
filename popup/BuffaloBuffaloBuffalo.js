@@ -1,10 +1,8 @@
 function listenForClicks() {
   document.addEventListener("click", (e) => {
-    function buffalo(tabs) {
-       browser.tabs.sendMessage(tabs[0].id, {
-        command: "buffalo"
-      });
-    }
+	document.getElementById('buffalo').onclick = function() {
+		command: "buffalo";
+	};
 	
 	function reset(tabs) {
       browser.tabs.sendMessage(tabs[0].id, {
