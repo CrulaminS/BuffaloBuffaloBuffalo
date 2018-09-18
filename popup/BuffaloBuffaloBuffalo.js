@@ -9,30 +9,17 @@ function listenForClicks() {
         command: "reset",
       });
     }
-	
-    function reportError(error) {
-      console.error(`Could not Buffaloify: ${error}`);
-    }
     
     if (e.target.classList.contains("buffalo")) {
       browser.tabs.query({active: true, currentWindow: true})
-        .then(buffalo)
-        .catch(reportError);
+        .then(buffalo);
     }
     else if (e.target.classList.contains("reset")) {
       browser.tabs.query({active: true, currentWindow: true})
-        .then(reset)
-        .catch(reportError);
+        .then(reset);
     }
   });
 }
 
-function reportExecuteScriptError(error) {
-  document.querySelector("#popup-content").classList.add("hidden");
-  document.querySelector("#error-content").classList.remove("hidden");
-  console.error(`Failed to execute BuffaloBuffaloBuffalo content script: ${error.message}`);
-}
-
 browser.tabs.executeScript({file: "/content_scripts/buffaloify.js"})
-.then(listenForClicks)
-.catch(reportExecuteScriptError);
+.then(listenForClicks);

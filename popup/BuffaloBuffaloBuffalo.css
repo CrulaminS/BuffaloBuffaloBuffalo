@@ -14,18 +14,18 @@ html, body {
   cursor: pointer;
 }
 
-.buffalo:hover {
+#buffalo:hover {
   background-color: #CFF2F2;
 }
 
-.buffalo {
+#buffalo {
   background-color: #E5F2F2;
 }
 
-.reset {
+#reset {
   background-color: #FBFBC9;
 }
 
-.reset:hover {
+#reset:hover {
   background-color: #EAEA9D;
 }
