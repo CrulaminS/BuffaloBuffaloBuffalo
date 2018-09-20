@@ -16,13 +16,3 @@ tempArray.sort((pair1, pair2) => {
 });
 
 let sortedReplacements = new Map(tempArray);
-
-function listenForClicks(){
-	document.getElementById("activate").addEventListener("click", activate()); 
-	document.getElementById("addWord").addEventListener("click", displayDate); 
-	document.getElementById("removeWord").addEventListener("click", displayDate); 
-	document.getElementById("reset").addEventListener("click", displayDate);
-}
-
-browser.tabs.executeScript({file: "/content_scripts/buffaloify.js"})
-.then(listenForClicks);
