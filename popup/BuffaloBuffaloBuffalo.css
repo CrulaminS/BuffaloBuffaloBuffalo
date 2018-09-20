@@ -1,5 +1,5 @@
 html, body {
-  width: 100px;
+  width: 125px;
 }
 
 .hidden {
@@ -7,19 +7,35 @@ html, body {
 }
 
 .button {
-  margin: 3% auto;
+  margin: 3% 3%;
   padding: 4px;
   text-align: center;
   font-size: 1.5em;
   cursor: pointer;
 }
 
-#buffalo:hover {
-  background-color: #CFF2F2;
+#activate {
+  background-color: #8080ff;
 }
 
-#buffalo {
-  background-color: #E5F2F2;
+#activate:hover {
+  background-color: #6666ff;
+}
+
+#addWord {
+  background-color: #b3ffb3;
+}
+
+#addWord:hover {
+  background-color: #1aff1a;
+}
+
+#removeWord {
+  background-color: #ffb3b3;
+}
+
+#removeWord:hover {
+  background-color: #ff4d4d;
 }
 
 #reset {

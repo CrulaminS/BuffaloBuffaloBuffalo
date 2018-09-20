@@ -1,33 +1,41 @@
-var buffaloButton = function buffaloify(){
-	var elements = document.getElementsByTagName('*');
 
-	for (var i = 0; i < elements.length; i++) {
-		var element = elements[i];
-
-		for (var j = 0; j < element.nodes.length; j++) {
-			var node = element.nodes[j];
-
-			if (node.nodeType === 3) {
-				var str = node.nodeValue;
-				var replacedstr = str.replace(/a/gi, "buffalo");
-
-				if (replacedstr !== str) {
-					element.replaceChild(document.createTextNode(replacedstr), node);
-				}
-			}
-		}
+	const wordsToReplace = sortedReplacements;
+	let regexs = new Map();
+	for (let word of wordsToReplace.keys()) {
+	  regexs.set(word, new RegExp(word, 'gi'));
 	}
-}
 
-function onExecuted(result) {
-  console.log(`Buffalo`);
-}
-
-function onError(error) {
-  console.log(`Error: ${error}`);
-}
-
-var executing = browser.tabs.executeScript({
-  code: buffaloButton
-});
-executing.then(onExecuted, onError);
+	function replaceText (node) {
+	  if (node.nodeType === Node.TEXT_NODE) {
+		if (node.parentNode &&
+			node.parentNode.nodeName === 'TEXTAREA') {
+		  return;
+		}
+		let content = node.textContent;
+		for (let [word, replacees] of wordsToReplace) {
+		  const regex = regexs.get(word);
+		  content = content.replace(regex, replacees);
+		}
+		node.textContent = content;
+	  }
+	  else {
+		for (let i = 0; i < node.childNodes.length; i++) {
+		  replaceText(node.childNodes[i]);
+		}    
+	  }
+	}
+	replaceText(document.body);
+	const observer = new MutationObserver((mutations) => {
+	  mutations.forEach((mutation) => {
+		if (mutation.addedNodes && mutation.addedNodes.length > 0) {
+		  for (let i = 0; i < mutation.addedNodes.length; i++) {
+			const newNode = mutation.addedNodes[i];
+			replaceText(newNode);
+		  }
+		}
+	  });
+	});
+	observer.observe(document.body, {
+	  childList: true,
+	  subtree: true
+	});
