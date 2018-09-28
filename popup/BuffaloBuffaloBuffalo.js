@@ -1,5 +1,19 @@
+const enteredReplacees = document.querySelector("#replacees");
+
+function saveInput(){
+	let replacees = enteredReplacees.value.split("\n");
+	browser.storage.local.set({replacees});
+}
+
+function update(replee){
+	enteredReplacees.value = replee.replacees.join("\n");
+}
+
+browser.storage.local.get().then(update);
+enteredReplacees.addEventListener("change", saveInput);
+
 let replacements = new Map();
-	replacements.set('a', 'Buffalo');
+//	replacements.set('a', 'Buffalo');
 
 let tempArray = Array.from(replacements);
 tempArray.sort((pair1, pair2) => {

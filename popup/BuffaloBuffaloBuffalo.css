@@ -1,47 +1,12 @@
-html, body {
-  width: 125px;
-}
-
 .hidden {
   display: none;
 }
 
-.button {
-  margin: 3% 3%;
-  padding: 4px;
-  text-align: center;
-  font-size: 1.5em;
-  cursor: pointer;
+#replacers {
+  display: block;
+  margin-top: 1em;
 }
 
-#activate {
-  background-color: #8080ff;
-}
-
-#activate:hover {
-  background-color: #6666ff;
-}
-
-#addWord {
-  background-color: #b3ffb3;
-}
-
-#addWord:hover {
-  background-color: #1aff1a;
-}
-
-#removeWord {
-  background-color: #ffb3b3;
-}
-
-#removeWord:hover {
-  background-color: #ff4d4d;
-}
-
-#reset {
-  background-color: #FBFBC9;
-}
-
-#reset:hover {
-  background-color: #EAEA9D;
+p{
+	display: block;
 }

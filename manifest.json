@@ -5,14 +5,17 @@
 	"version": "1.0",
 
 	"description": "Replaces words with other words. And saves profiles of words to replace with other words. Like Buffalo. Code based on the Emoji-Substitution extension.",
-
+	
+	"homepage_url": "https://github.com/CrulaminS/BuffaloBuffaloBuffalo",
+	
 	"icons": {
 		"48": "icons/buffalo-48.png",
 		"96": "icons/buffalo-96.png"
 	},
 
 	"permissions": [
-		"activeTab"
+		"activeTab",
+		"storage"
 	],
 	
 	"applications": {
@@ -20,15 +23,17 @@
 			"id": "buffalobuffalobuffalo@example.com"
 		}
 	},
-  
-	"browser_action": {
-	  "browser_style": true,
-	  "default_icon": {
-		"48": "icons/buffalo-48.png",
-		"96": "icons/buffalo-96.png"
-	  },
-	  "default_title": "BuffaloBuffaloBuffalo",
-	  "default_popup": "popup/BuffaloBuffaloBuffalo.html"
-	}
+	
+	"options_ui": {
+		"page": "popup/BuffaloBuffaloBuffalo.html",
+		"browser_style": true
+	},
+	
+	"content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["./popup/BuffaloBuffaloBuffalo.js", "./popup/content_scripts/buffaloify.js"]
+    }
+  ]
 	
 }
