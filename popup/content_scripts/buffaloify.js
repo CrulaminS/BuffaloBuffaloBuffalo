@@ -1,7 +1,7 @@
 const wordsToReplace = sortedReplacements;
 let regexs = new Map();
 for (let word of wordsToReplace.keys()) {
-  regexs.set(word, new RegExp(word, 'i'));
+  regexs.set(word, new RegExp(word, 'gi'));
 }
 
 function replaceText (node) {
