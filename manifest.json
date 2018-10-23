@@ -25,15 +25,12 @@
 	},
 	
 	"options_ui": {
-		"page": "popup/BuffaloBuffaloBuffalo.html",
+		"page": "options/BuffaloBuffaloBuffalo.html",
 		"browser_style": true
 	},
 	
-	"content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["./popup/content_scripts/mapping.js", "./popup/content_scripts/buffaloify.js"]
-    }
-  ]
+	"background": {
+		"scripts": ["background/mapping.js", "background/buffaloify.js"]
+	}
 	
 }

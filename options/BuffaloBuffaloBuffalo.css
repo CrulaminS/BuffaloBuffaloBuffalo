@@ -1,0 +1,12 @@
+.hidden {
+  display: none;
+}
+
+#replacers {
+  display: block;
+  margin-top: 1em;
+}
+
+p{
+	display: block;
+}
